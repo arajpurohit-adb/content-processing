@@ -1,0 +1,139 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "version": {
+      "type": "integer"
+    },
+    "projectInfo": {
+      "type": "object",
+      "properties": {
+        "fileType": {
+          "type": "string"
+        },
+        "fileName": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "fileType",
+        "fileName"
+      ]
+    },
+    "storageInfo": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "type": "string"
+        },
+        "containerId": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "type",
+        "containerId"
+      ]
+    },
+    "mediaInfo": {
+      "type": "array",
+      "items": [
+        {
+          "type": "object",
+          "properties": {
+            "frameIOAssetId": {
+              "type": "string"
+            },
+            "relativePath": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "relativePath"
+          ]
+        }
+      ]
+    },
+    "compositionInfo": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "startTime": {
+          "type": "number"
+        },
+        "endTime": {
+          "type": "number"
+        },
+        "isSplit": {
+          "type": "boolean"
+        },
+        "splitOrder": {
+          "type": "integer"
+        }
+      },
+      "required": [
+        "name",
+        "startTime",
+        "endTime"
+      ]
+    },
+    "inputFonts": {
+      "type": "array",
+      "items": [
+        {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "string"
+            },
+            "name": {
+              "type": "string"
+            },
+            "type": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "id",
+            "name",
+            "type"
+          ]
+        }
+      ]
+    },
+    "outputFilePath": {
+      "type": "string"
+    },
+    "clientSession": {
+      "type": "object",
+      "properties": {
+        "app": {
+          "type": "string"
+        },
+        "appVersion": {
+          "type": "string"
+        },
+        "buildNo": {
+          "type": "string"
+        },
+        "platform": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "app",
+        "appVersion",
+        "buildNo",
+        "platform"
+      ]
+    }
+  },
+  "required": [
+    "projectInfo",
+    "storageInfo",
+    "compositionInfo",
+    "outputFilePath"
+  ]
+}
